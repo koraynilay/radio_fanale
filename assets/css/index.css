@@ -1,36 +1,24 @@
 body {
- width: 97%;
- font-family: Arial, Verdana, sans-serif;
- color: #162025;
- margin: auto;}
-
-/* Create four equal columns that floats next to each other */
-.column {
- float: left;
- width: 50%;
+	width: 100%;
+	/*font-family: Arial, Verdana, sans-serif;*/
+	color: #162025;
+	position: absolute;
+	overflow-y: hidden;
+	overflow-x: hidden;
 }
 
-/* Clear floats */
-.row:after {
- content: "";
- display: table;
- clear: both;
+.column-sx {
+	position: float;
+	float: left;
+	width: 60%;
+	height: 100vh;
+	background-color: purple;
 }
 
-
-
-/* Responsive layout - makes a two column-layout instead of four columns */
-@media screen and (max-width: 900px) {
- .column {
- width: 50%;
- }
-}
-
-
-
-/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
- .column {
- width: 100%;
- }
+.column-dx{
+	position: float;
+	float: right;
+	height: 100vh;
+	width: 40%;
+	background-color: red;
 }
