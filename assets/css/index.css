@@ -1,25 +1,36 @@
-body{
-	background-color: #161925;
-	overflow: hidden;
-	width: 100%;
+body {
+ width: 97%;
+ font-family: Arial, Verdana, sans-serif;
+ color: #162025;
+ margin: auto;}
+
+/* Create four equal columns that floats next to each other */
+.column {
+ float: left;
+ width: 50%;
 }
 
-.container{
-	display: flex;
-	width: 100%;
-	height: 100%;
+/* Clear floats */
+.row:after {
+ content: "";
+ display: table;
+ clear: both;
 }
 
-.col-sx{
-	width: 59%;
-	height: 100vh;
-	float: left;
-	background-color: black;
+
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 900px) {
+ .column {
+ width: 50%;
+ }
 }
 
-.col-dx{
-	width: 40%;
-	height: 100vh;
-	float: right;
-	background-color: white;
+
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+ .column {
+ width: 100%;
+ }
 }
