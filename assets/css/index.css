@@ -1,0 +1,25 @@
+body{
+	background-color: #161925;
+	overflow: hidden;
+	width: 100%;
+}
+
+.container{
+	display: flex;
+	width: 100%;
+	height: 100%;
+}
+
+.col-sx{
+	width: 59%;
+	height: 100vh;
+	float: left;
+	background-color: black;
+}
+
+.col-dx{
+	width: 40%;
+	height: 100vh;
+	float: right;
+	background-color: white;
+}
