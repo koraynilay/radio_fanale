@@ -25,16 +25,31 @@ var mPlayBtnContainer = document.querySelector('.container');
 mPlayBtn.addEventListener('click', function() {
 	
 	mAnalyser.context.resume().then(() => {
-    console.log('Playback resumed successfully');
-  });
+	    console.log('Playback resumed successfully');
+	});
 	
 	//mPlayBtnContainer.style.display = 'none';
-  document.getElementById("button").innerHTML = "Pause"
-	mAudioElement.currentTime = 0;
-	mAudioElement.play();
+	//mAudioElement.currentTime = 0;
+	console.log("stat: "+mAudioElement.paused);
+	if(mAudioElement.paused == true){
+		mAudioElement.play();
+		document.getElementById("button").innerHTML = " MUTE "
+	}
+	else {
+		if(mAudioElement.muted == true){
+			mAudioElement.muted = false;
+			document.getElementById("button").innerHTML = " MUTE "
+		}
+		else{
+			mAudioElement.muted = true;
+			document.getElementById("button").innerHTML = "UNMUTE";
+		}
+		console.log(mAudioElement.muted);
+	}
 	
 	mCamera.position.set(0, 0, 1200);
 });
+
 mAudioElement.addEventListener('ended', function() {
 		mPlayBtnContainer.style.display = 'flex';
 })
@@ -56,7 +71,9 @@ function init() {
 
 function initAudio() {
   mAudioElement.crossOrigin = "anonymous";
-  mAudioElement.src = 'https://raw.githubusercontent.com/zadvorsky/three.bas/master/examples/_audio/song.mp3';
+//  mAudioElement.src = 'https://raw.githubusercontent.com/zadvorsky/three.bas/master/examples/_audio/song.mp3';
+  mAudioElement.src = 'http://localhost:8000/fanale';
+  mAudioElement.muted = false;
 
   mAnalyser = new SpectrumAnalyzer(mPathLength * 0.5, 0.80);
   mAnalyser.setSource(mAudioElement);
