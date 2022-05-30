@@ -72,7 +72,7 @@ function init() {
 function initAudio() {
   mAudioElement.crossOrigin = "anonymous";
 //  mAudioElement.src = 'https://raw.githubusercontent.com/zadvorsky/three.bas/master/examples/_audio/song.mp3';
-  mAudioElement.src = 'http://localhost:8000/fanale';
+  mAudioElement.src = 'http://192.168.3.36:8000/fanale';
   mAudioElement.muted = false;
 
   mAnalyser = new SpectrumAnalyzer(mPathLength * 0.5, 0.80);

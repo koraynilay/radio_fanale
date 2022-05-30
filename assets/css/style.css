@@ -3,12 +3,13 @@ html, body {
 	overflow: hidden;
 	font-family: sans-serif;
 	background: #13091B;
+	/*background: #ffffff;*/
 	height: 100%;
 }
 
 .row {
 	display: flex;
-	background: whitesmoke;
+	background: #13091B;
 }
   
 .column {
@@ -19,22 +20,119 @@ html, body {
 	position: absolute;
 	left: 0;
 	top: 0;
+	z-index: 0;
 }
 .container {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	height: 100%;
+	z-index: -2;
 }
 .play-btn {
 	margin-top: calc(50% - 53px);
 	color: #13091B;
-	background: #007A99;
+	background: #9cadce;
 	display: inline-block;
 	padding: 16px 48px;
 	font-size: 18px;
 	cursor: pointer;
-	border-radius: 4px;
+	border-radius: 20px;
 	letter-spacing: 0.1em;
 	z-index: 1;
 }
+
+.play-btn:hover{
+	background: #d1cfe2;
+}
+
+#send-button {
+	background: #d1cfe2;
+}
+#send-button {
+	color: #13091B;
+	background: #9cadce;
+	cursor: pointer;
+	border-radius: 20px;
+	letter-spacing: 0.1em;
+	border: none;
+}
+
+#messages {
+	color: #ffffff;
+	/*position: fixed;
+	bottom: -30%;
+	right: -30%;*/
+	z-index: 1;
+	width: 100px;
+	background-color: transparent;
+	backdrop-filter: blur(14px);
+	overflow-wrap: break-word;
+	border-radius: 5px;
+}
+
+#content, #name {
+	color: #ffffff;
+	background-color: transparent;
+	border: hidden;
+	border-bottom: 1px solid white;
+	/*position: fixed;
+	bottom: 0;
+	right: 0;*/
+	z-index: 1;
+}
+#content :focus {
+	border: hidden;
+	border-bottom: 1px solid white;
+}
+#name :focus {
+	border: hidden;
+	border-bottom: 1px solid white;
+}
+#nome-label {
+	color: white;
+}
+#content {
+	width: 30%;
+	height: 30px;
+}
+
+#ciao {
+	position: absolute;
+	bottom: 3%;
+	right: 3%;
+	/*float: right;*/
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    /*-webkit-box-shadow: inset 0 0 6px #bb86fc;*/
+    /*border-radius: 2px;*/
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    /*border-radius: 2px;*/
+    max-height: 10px;
+    /*-webkit-box-shadow: inset 0 0 6px #bb86fc;*/
+    background: #a8b5e0;
+    transition: 0.3s;
+    border-radius: 30px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ca9eff;
+    
+}
+
+/*input[type=text] {
+	background-color: #4CAF50;
+	color: white;
+	padding: 14px 0px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 4px;
+}*/
